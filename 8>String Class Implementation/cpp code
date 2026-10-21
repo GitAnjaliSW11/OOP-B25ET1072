@@ -1,0 +1,52 @@
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class String
+{
+private:
+    string str;
+
+public:
+    // Parameterized Constructor
+    String(string s)
+    {
+        str = s;
+        cout << "Constructor called." << endl;
+    }
+
+    // Accept function
+    void Accept()
+    {
+        cout << "Enter a string: ";
+        getline(cin, str);
+    }
+
+    // Display function
+    void Display()
+    {
+        cout << "String: " << str << endl;
+    }
+
+    // Destructor
+    ~String()
+    {
+        cout << "Destructor called." << endl;
+    }
+};
+
+int main()
+{
+    String s("Initial String");
+
+    cout << "Initially: ";
+    s.Display();
+
+    s.Accept();
+
+    cout << "After accepting input: ";
+    s.Display();
+
+    return 0;
+}
