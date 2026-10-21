@@ -1,0 +1,68 @@
+
+#include <iostream>
+using namespace std;
+
+class Shape
+{
+public:
+    virtual void area()
+    {
+        cout << "Area of Shape" << endl;
+    }
+};
+
+class Circle : public Shape
+{
+private:
+    float radius;
+
+public:
+    void Accept()
+    {
+        cout << "Enter radius of circle: ";
+        cin >> radius;
+    }
+
+    void area() override
+    {
+        cout << "Area of Circle: " << 3.14 * radius * radius << endl;
+    }
+};
+
+class Rectangle : public Shape
+{
+private:
+    float length, breadth;
+
+public:
+    void Accept()
+    {
+        cout << "Enter length of rectangle: ";
+        cin >> length;
+        cout << "Enter breadth of rectangle: ";
+        cin >> breadth;
+    }
+
+    void area() override
+    {
+        cout << "Area of Rectangle: " << length * breadth << endl;
+    }
+};
+
+int main()
+{
+    Shape *s;
+
+    Circle c;
+    Rectangle r;
+
+    c.Accept();
+    s = &c;
+    s->area();
+
+    r.Accept();
+    s = &r;
+    s->area();
+
+    return 0;
+}
