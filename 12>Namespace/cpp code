@@ -1,0 +1,33 @@
+
+#include <iostream>
+using namespace std;
+
+namespace First
+{
+    int a = 10;
+
+    void display()
+    {
+        cout << "This is First Namespace." << endl;
+        cout << "Value of a: " << a << endl;
+    }
+}
+
+namespace Second
+{
+    int a = 20;
+
+    void display()
+    {
+        cout << "This is Second Namespace." << endl;
+        cout << "Value of a: " << a << endl;
+    }
+}
+
+int main()
+{
+    First::display();
+    Second::display();
+
+    return 0;
+}
