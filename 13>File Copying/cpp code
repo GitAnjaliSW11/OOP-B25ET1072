@@ -1,0 +1,35 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    string text, name1, name2;
+
+    cout << "Enter content: ";
+    getline(cin, text);
+
+    cout << "Enter source file name: ";
+    cin >> name1;
+
+    ofstream file1(name1);
+    file1 << text;
+    file1.close();
+
+    cout << "Enter destination file name: ";
+    cin >> name2;
+
+    ifstream file2(name1);
+    ofstream file3(name2);
+
+    string data;
+    getline(file2, data);
+    file3 << data;
+
+    file2.close();
+    file3.close();
+
+    cout << "File copied successfully!";
+
+    return 0;
+}
